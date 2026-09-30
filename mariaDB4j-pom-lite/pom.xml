@@ -1,0 +1,164 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>ch.vorburger.mariaDB4j</groupId>
+  <artifactId>mariaDB4j-pom-lite</artifactId>
+  <!-- This here is NOT a *-SNAPSHOT version, never!
+
+         Just manually increment this whenever you have to make a change to
+         this pom.xml - which should, normally, be relatively rare!
+
+         If you do have to change this, remember to adjust the <version> of
+         the <parent> in the current mariaDB4j-pom SNAPSHOT, and in future
+         DBs/mariaDB4j-db-*/pom.xml versions (as those are also always
+         non-SNAPSHOT, existing ones do NOT get changed).
+     -->
+  <version>2.3.0</version>
+  <packaging>pom</packaging>
+
+  <name>MariaDB4j POM Lite</name>
+  <description>Java wrapper / launcher for MariaDB (or MySQL)</description>
+  <url>https://github.com/vorburger/MariaDB4j</url>
+  <inceptionYear>2012</inceptionYear>
+
+  <scm>
+    <connection>scm:git:https://github.com/MariaDB4j/MariaDB4j.git</connection>
+    <url>https://github.com/vorburger/MariaDB4j</url>
+    <!-- Do NOT specify developerConnection & tag here, as those are only used
+             by the maven-release-plugin, which we don't use here and in the db-*/pom.xml -->
+  </scm>
+
+  <licenses>
+    <license>
+      <name>Apache 2</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+    <license>
+      <name>Eclipse Public License v1.0</name>
+      <url>http://www.eclipse.org/legal/epl-v10.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <organization>
+    <name>Michael Vorburger</name>
+    <url>http://www.vorburger.ch</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>vorburger</id>
+      <name>Michael Vorburger</name>
+      <email>mike@vorburger.ch</email>
+      <url>http://www.vorburger.ch</url>
+    </developer>
+  </developers>
+  <contributors>
+    <contributor>
+      <name>Please consult the CONTRIBUTORS file which should be included with this JAR</name>
+    </contributor>
+  </contributors>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.sonatype.central</groupId>
+        <artifactId>central-publishing-maven-plugin</artifactId>
+        <version>0.11.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <publishingServerId>central</publishingServerId>
+          <!-- https://central.sonatype.org/publish/publish-portal-maven/#automatic-publishing -->
+          <autoPublish>true</autoPublish>
+          <!-- https://central.sonatype.org/publish/publish-portal-maven/#wait-for-publishing -->
+          <waitUntil>published</waitUntil>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.4.0</version>
+        <configuration>
+          <!-- This is super important (to avoid the binaries in the *-sources.jar) -->
+          <excludeResources>true</excludeResources>
+          <includePom>true</includePom>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+
+    <pluginManagement>
+      <plugins>
+        <!--This
+        plugin's configuration is used to store Eclipse m2e settings only. It has no influence on
+        the Maven build itself.-->
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>
+                      org.codehaus.mojo
+                    </groupId>
+                    <artifactId>
+                      license-maven-plugin
+                    </artifactId>
+                    <versionRange>
+                      [1.7,)
+                    </versionRange>
+                    <goals>
+                      <goal>
+                        check-file-header
+                      </goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore />
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>gpg</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>3.2.8</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

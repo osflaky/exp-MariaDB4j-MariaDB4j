@@ -1,0 +1,34 @@
+MariaDB4j CONTRIBUTORS
+
+- Michael Vorburger @vorburger <mike@vorburger.ch> (https://www.vorburger.ch), February/March 2012; originally for http://mifos.org
+- Michael Seaton @mseaton, October 2013; for https://openmrs.org
+- Darius Jazayeri @djazayeri; for https://openmrs.org
+- Cosmin @cioan; for https://openmrs.org
+- Stephane Zermatten @szermatt
+- Timö @timorohwedder
+- Juhani Simola @osimola, March 2014
+- Cedric Gatay @CedricGatay, March 2015
+- Kevin McLaughlin <Kevin.McLaughlin@ipsoft.com> (http://ipsoft.com)
+- John Hewson @jahewson <john@jahewson.com> (https://jahewson.me)
+- Anver Sotnikov @anverus <asotnikov@tripadvisor.com>, July 2016; for http://tripadvisor.com
+- Guillaume Hiron @ghiron; for http://www.honestica.com
+- Josef Andersson @hanklank <josef.andersson@svt.se>, July 2016; for http://www.svt.se
+- Leora Pearson @lpearson05 <Leora.Pearson@bazaarvoice.com>, Aug 2016 (http://www.bazaarvoice.com/)
+- Carlos Ortiz [@cortiz](https://github.com/cortiz/) <carlos.ortiz@craftersoftware.com>, Jun 2017 [CrafterCMS](https://craftercms.org)
+- Jai Deep Mulchandani [@jai-deep](https://github.com/jai-deep) <Jaideep.Mulchandani@walmart.com> Jan 2018; for http://walmartlabs.com
+- Lukasz Degus [@lde-avaleo] <lde@avaleo.net>, Jan 2018
+- Andrew Groot [@thesquaregroot](https://github.com/thesquaregroot) <groot@softwareverde.com>, June 2018; for https://softwareverde.com
+- Yftach Zur [@yiftizur](https://github.com/yiftizur), June 2018; for MariaDB4jRule for easy integration with JUnit
+- William Dutton [@duttonw](https://github.com/duttonw) <will.dutt@gmail.com>, June 2018; for mariaDB4j-maven-plugin integration testing of micro services under services.qld.gov.au
+- Mike Chaberski [@mike10004](https://github.com/mike10004), May 2017; initial [mariadb4j-maven-plugin](https://github.com/mike10004/mariadb4j-maven-plugin) incorporated to improve mariaDB4j-maven-plugin
+- Yuexiang Gao [@kbyyd24](https://github.com/kbyyd24) <melo@gaoyuexiang.cn> (http://blog.gaoyuexiang.cn), August 2018; for mariaDB4j-springboot auto-configure with spring boot
+- Neelesh Shastry [@neeleshs](https://github.com/neeleshs), Dec 2017 Provide a callback if the DB process crashes
+- Gordon Little [@glittle1972](https://github.com/glittle1972), Jun 2019 Add option to force continue-on-error for sourcing SQL scripts
+- Theodore Ni [@tjni](https://github.com/tjni), Aug 2019 Reduce file copying during classpath unpacking
+- Tamas Gaspar [@tomlincoln](https://github.com/tomlincoln), Oct 2020 Make MariaDB4jService start method do not recreate the DB when already started
+- Knowles Atchison, Jr [@TheKnowles](https://github.com/TheKnowles), September 2023 Added MariaDB 10.11.5 to build, March 2025 Windows MariaDB 11.4.5
+- Cristian Ghezzi [@xtianus](https://github.com/xtianus), April 2025 Add reusing data folder on startup with DB.openEmbeddedDB()
+- Bob Bass [@robertjbass](https://github.com/robertjbass) <bob@bbass.co>, January 2026 Add macOS/Linux arm64 binaries for MariaDB 10.5.29, 10.6.24, 10.11.15, 11.4.9, 11.8.5; for SpinDB
+- also see https://github.com/MariaDB4j/MariaDB4j/graphs/contributors
+
+Contributions, patches, forks more than welcome - hack it, and add your name here! ;-)
